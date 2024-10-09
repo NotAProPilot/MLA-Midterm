@@ -1,6 +1,8 @@
 import random
 import sys
 import os
+import matplotlib.pyplot as plt
+
 
 # Add the parent directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -94,8 +96,34 @@ def main():
     #                       END OF YOUR CODE                            #
     #####################################################################
     
-    knn_impute_by_user(sparse_matrix, val_data, k=random.randint(1,999))
-    knn_impute_by_item(sparse_matrix, val_data, k=random.randint(1,999))   
+    
+    user_accuracies = []
+    item_accuracies = []
+    
+    for k in k_values:
+        print(f"Testing k = {k} for KNN by user (first line) and item (second line)...")
+        
+        # Accuracy for KNN by user
+        user_acc = knn_impute_by_user(sparse_matrix, val_data, k)
+        user_accuracies.append(user_acc)
+        
+        # Accuracy for KNN by item
+        item_acc = knn_impute_by_item(sparse_matrix, val_data, k)
+        item_accuracies.append(item_acc)
+    
+    # Plot the accuracies against k
+    plt.figure(figsize=(10, 6))
+    plt.plot(k_values, user_accuracies, marker='o', label='KNN by User', color='b')
+    plt.plot(k_values, item_accuracies, marker='o', label='KNN by Item', color='r')
+    plt.title("KNN Accuracy vs k (Number of Neighbors)")
+    plt.xlabel("k (Number of Neighbors)")
+    plt.ylabel("Validation Accuracy")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# Example k values: [1, 6, 11, 16, 21, 26]
+k_values = [1, 6, 11, 16, 21, 26]   
 
 
 
