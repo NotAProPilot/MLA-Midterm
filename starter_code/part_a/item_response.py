@@ -1,10 +1,19 @@
-from utils import *
-
+import sys
 import numpy as np
+import os
 
+# Add the parent directory to the system path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils import *
 
 def sigmoid(x):
     """ Apply sigmoid function.
+    
+    Computes the probability of a correct response for a student i to a question j.
+    
+    :param theta: Ability of student i (array of abilities)
+    :param beta: Difficulty of question j (array of difficulties)
+    :return: Probability of a correct response (array of probabilities)
     """
     return np.exp(x) / (1 + np.exp(x))
 
@@ -12,23 +21,30 @@ def sigmoid(x):
 def neg_log_likelihood(data, theta, beta):
     """ Compute the negative log-likelihood.
 
-    You may optionally replace the function arguments to receive a matrix.
-
-    :param data: A dictionary {user_id: list, question_id: list,
-    is_correct: list}
-    :param theta: Vector
-    :param beta: Vector
-    :return: float
+    :param data: A dictionary {user_id: list, question_id: list, is_correct: list}
+    :param theta: Vector of student abilities
+    :param beta: Vector of question difficulties
+    :return: Negative log-likelihood (float)
     """
-    #####################################################################
-    # TODO:                                                             #
-    # Implement the function as described in the docstring.             #
-    #####################################################################
-    log_lklihood = 0.
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
-    return -log_lklihood
+    log_likelihood = 0.0
+
+    # Loop through each data point
+    for i in range(len(data['user_id'])):
+        user_id = data['user_id'][i]       # Student ID
+        question_id = data['question_id'][i]  # Question ID
+        is_correct = data['is_correct'][i]  # Actual response (1 if correct, 0 if incorrect)
+        
+        # Compute the probability of the correct response using sigmoid
+        probability_correct = sigmoid(theta[user_id] - beta[question_id])
+        
+        # Update log likelihood using the formula:
+        # L = y_ij * log(p_ij) + (1 - y_ij) * log(1 - p_ij)
+        log_likelihood += is_correct * np.log(probability_correct) + (1 - is_correct) * np.log(1 - probability_correct)
+
+    # Return negative log-likelihood
+    return -log_likelihood
+    
+    
 
 
 def update_theta_beta(data, lr, theta, beta):

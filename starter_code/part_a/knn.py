@@ -2,130 +2,149 @@ import random
 import sys
 import os
 import matplotlib.pyplot as plt
-
+from sklearn.impute import KNNImputer
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 # Add the parent directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
-from sklearn.impute import KNNImputer
 from utils import *
 
 
 def knn_impute_by_user(matrix, valid_data, k):
     """ Fill in the missing values using k-Nearest Neighbors based on
-    student similarity. Return the accuracy on valid_data.
-
-    See https://scikit-learn.org/stable/modules/generated/sklearn.
-    impute.KNNImputer.html for details.
-
-    :param matrix: 2D sparse matrix
-    :param valid_data: A dictionary {user_id: list, question_id: list,
-    is_correct: list}
-    :param k: int
-    :return: float
+    student similarity. Return accuracy, precision, recall, and F1-score.
     """
     nbrs = KNNImputer(n_neighbors=k)
-    # We use NaN-Euclidean distance measure.
-    
-    # By default, the matrix args here 
     mat = nbrs.fit_transform(matrix)
-    acc = sparse_matrix_evaluate(valid_data, mat)
-    print("Validation Accuracy: {}".format(acc))
-    return acc
+    
+    # Predictions for the validation data
+    
+     # Create a prediction matrix for precision, recall and F1 evaluation
+    # By accessing the matrix at a specific user and question and zip them
+    # If the zipped pair of question and user is larger or equal than 0.5 
+    y_pred = [mat[user_id, question_id] >= 0.5 for user_id, question_id in zip(valid_data["user_id"], valid_data["question_id"])]
+    y_true = valid_data["is_correct"]
+    
+    # Calculate accuracy
+    accuracy = sparse_matrix_evaluate(valid_data, mat)
+    
+    # Calculate precision, recall, and F1-score
+    precision = precision_score(y_true, y_pred, average='binary')
+    recall = recall_score(y_true, y_pred, average='binary')
+    f1 = f1_score(y_true, y_pred, average='binary')
+    
+    return accuracy, precision, recall, f1
 
 
 def knn_impute_by_item(matrix, valid_data, k):
     """ Fill in the missing values using k-Nearest Neighbors based on
-    question similarity. Return the accuracy on valid_data.
-
-    :param matrix: 2D sparse matrix
-    :param valid_data: A dictionary {user_id: list, question_id: list,
-    is_correct: list}
-    :param k: int
-    :return: float
+    question similarity. Return accuracy, precision, recall, and F1-score.
     """
-    #####################################################################
-    # TODO: In this function, you'll need to fill in missing values based on question similarity. 
-    # TODO: You’ll use the same technique as the user-based function but treat questions as the nearest neighbors.                  
-    # ALSO TODO: IGNORE STRANGE WORDS
-    # 
-    # CAUTION: THIS APPROACH IS SUGGESTED BY CHATGPT. NO OFFICIAL DOCUMENTATION EXISTED FOR
-    # THIS APPROACH. IMPLEMENT WITH CAUTION. ASK DR. KHANH AND TA IMMEDIATELY. 
-    # Implement the function as described in the docstring.             #
-    
-    
-    # Initialize the KNN imputer with k neighbors:
     nbrs = KNNImputer(n_neighbors=k)
-    
-    # Transpose the matrix so that the questions (items) are treated as rows
     matrix_T = matrix.T
-    
-    # Fit to data, then transform the TRANSPOSED matrix:
     mat_T = nbrs.fit_transform(matrix_T).T
     
-    # Evaluate said transposed matrix:
-    acc = sparse_matrix_evaluate(valid_data, mat_T)
-    print("Validation Accuracy: {}".format(acc))
-    return acc
+    # Predictions for the validation data
     
-    #TODO: DELETE THIS NOTE (2203 2OCT24)
-
-
+    # Create a prediction matrix for precision, recall and F1 evaluation
+    # By accessing the matrix at a specific user and question and zip them
+    # If the zipped pair of question and user is larger or equal than 0.5 
+    y_pred = [mat_T[user_id, question_id] >= 0.5 for user_id, question_id in zip(valid_data["user_id"], valid_data["question_id"])]
+    
+    # Create a correct matrix
+    y_true = valid_data["is_correct"]
+    
+    # Calculate accuracy
+    accuracy = sparse_matrix_evaluate(valid_data, mat_T)
+    
+    # Calculate precision, recall, and F1-score
+    precision = precision_score(y_true, y_pred, average='binary')
+    recall = recall_score(y_true, y_pred, average='binary')
+    f1 = f1_score(y_true, y_pred, average='binary')
+    
+    return accuracy, precision, recall, f1
 
 
 def main():
-    #TODO: JESUS WHO THE FUCK DON'T ACTUALLY ACCEPT THE ACTUAL FILE
     sparse_matrix = load_train_sparse(r"starter_code\data").toarray()
     val_data = load_valid_csv(r"starter_code\data")
     test_data = load_public_test_csv(r"starter_code\data")
-
-    print("Sparse matrix:")
-    print(sparse_matrix)
-    print("Shape of sparse matrix:")
-    print(sparse_matrix.shape)
-
-    #####################################################################
-    # TODO:                                                             #
-    # Compute the validation accuracy for each k. Then pick k* with     #
-    # the best performance and report the test accuracy with the        #
-    # chosen k*.                                                        #
-    #####################################################################
-    pass
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
     
     
+    # Initialize values of k in range [1, 100] in increment of 5
+    k_values = [1]
+    for i in range(5, 100, 5):
+        k_values.append(i)
+    
+    # Empty list to append results
     user_accuracies = []
+    user_precisions = []
+    user_recalls = []
+    user_f1s = []
+    
     item_accuracies = []
+    item_precisions = []
+    item_recalls = []
+    item_f1s = []
     
     for k in k_values:
         print(f"Testing k = {k} for KNN by user (first line) and item (second line)...")
         
-        # Accuracy for KNN by user
-        user_acc = knn_impute_by_user(sparse_matrix, val_data, k)
+        # Accuracy, precision, recall, and F1 for KNN by user
+        user_acc, user_prec, user_rec, user_f1 = knn_impute_by_user(sparse_matrix, val_data, k)
         user_accuracies.append(user_acc)
+        user_precisions.append(user_prec)
+        user_recalls.append(user_rec)
+        user_f1s.append(user_f1)
         
-        # Accuracy for KNN by item
-        item_acc = knn_impute_by_item(sparse_matrix, val_data, k)
+        # Accuracy, precision, recall, and F1 for KNN by item
+        item_acc, item_prec, item_rec, item_f1 = knn_impute_by_item(sparse_matrix, val_data, k)
         item_accuracies.append(item_acc)
+        item_precisions.append(item_prec)
+        item_recalls.append(item_rec)
+        item_f1s.append(item_f1)
     
-    # Plot the accuracies against k
-    plt.figure(figsize=(10, 6))
-    plt.plot(k_values, user_accuracies, marker='o', label='KNN by User', color='b')
-    plt.plot(k_values, item_accuracies, marker='o', label='KNN by Item', color='r')
-    plt.title("KNN Accuracy vs k (Number of Neighbors)")
+    # Plot the metrics against k for KNN by user and by item
+    plt.figure(figsize=(12, 8))
+    
+    # Plot accuracy
+    plt.subplot(2, 2, 1)
+    plt.plot(k_values, user_accuracies, marker='o', label='KNN by User - Accuracy', color='b')
+    plt.plot(k_values, item_accuracies, marker='o', label='KNN by Item - Accuracy', color='r')
+    plt.title("Accuracy vs k")
     plt.xlabel("k (Number of Neighbors)")
-    plt.ylabel("Validation Accuracy")
+    plt.ylabel("Accuracy")
     plt.legend()
-    plt.grid(True)
+    
+    # Plot precision
+    plt.subplot(2, 2, 2)
+    plt.plot(k_values, user_precisions, marker='o', label='KNN by User - Precision', color='b')
+    plt.plot(k_values, item_precisions, marker='o', label='KNN by Item - Precision', color='r')
+    plt.title("Precision vs k")
+    plt.xlabel("k (Number of Neighbors)")
+    plt.ylabel("Precision")
+    plt.legend()
+    
+    # Plot recall
+    plt.subplot(2, 2, 3)
+    plt.plot(k_values, user_recalls, marker='o', label='KNN by User - Recall', color='b')
+    plt.plot(k_values, item_recalls, marker='o', label='KNN by Item - Recall', color='r')
+    plt.title("Recall vs k")
+    plt.xlabel("k (Number of Neighbors)")
+    plt.ylabel("Recall")
+    plt.legend()
+    
+    # Plot F1-Score
+    plt.subplot(2, 2, 4)
+    plt.plot(k_values, user_f1s, marker='o', label='KNN by User - F1-Score', color='b')
+    plt.plot(k_values, item_f1s, marker='o', label='KNN by Item - F1-Score', color='r')
+    plt.title("F1-Score vs k")
+    plt.xlabel("k (Number of Neighbors)")
+    plt.ylabel("F1-Score")
+    plt.legend()
+    
+    plt.tight_layout()
     plt.show()
-
-# Example k values: [1, 6, 11, 16, 21, 26]
-k_values = [1, 6, 11, 16, 21, 26]   
-
-
 
 
 if __name__ == "__main__":

@@ -18,6 +18,7 @@ def knn_impute_by_user(matrix, valid_data, k):
     mat = nbrs.fit_transform(matrix)
     
     # Predictions for the validation data
+    # Creating 
     y_pred = [mat[user_id, question_id] >= 0.5 for user_id, question_id in zip(valid_data["user_id"], valid_data["question_id"])]
     y_true = valid_data["is_correct"]
     
