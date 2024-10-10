@@ -45,8 +45,6 @@ def neg_log_likelihood(data, theta, beta):
     return -log_likelihood
     
     
-
-
 def update_theta_beta(data, lr, theta, beta):
     """ Update theta and beta using gradient descent.
 
@@ -56,6 +54,7 @@ def update_theta_beta(data, lr, theta, beta):
         beta <- new_beta
 
     You may optionally replace the function arguments to receive a matrix.
+    This function is where you use the derivative of log likelihood formula. 
 
     :param data: A dictionary {user_id: list, question_id: list,
     is_correct: list}
@@ -68,10 +67,37 @@ def update_theta_beta(data, lr, theta, beta):
     # TODO:                                                             #
     # Implement the function as described in the docstring.             #
     #####################################################################
-    pass
+    # pass
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
+    
+    
+    # Initialize the gradients for theta and beta
+    # In the form of an array
+    theta_grad = np.zeros_like(theta) 
+    beta_grad = np.zeros_like(beta)
+    
+     # Loop through each data point (the length of user_id column)
+    for i in range(len(data['user_id'])):
+        user_id = data['user_id'][i]       # Student ID
+        question_id = data['question_id'][i]  # Question ID
+        is_correct = data['is_correct'][i]  # Actual response (1 if correct, 0 if incorrect)
+        
+        # Compute the probability of correct response using sigmoid
+        prob_correct = sigmoid(theta[user_id] - beta[question_id])
+        
+        # Compute the error (actual - predicted probability)
+        error = is_correct - prob_correct
+        
+        # Update the gradients
+        theta_grad[user_id] += error  # Gradient for theta
+        beta_grad[question_id] -= error  # Gradient for beta
+
+    # Perform the gradient descent updates for theta and beta
+    theta += lr * theta_grad
+    beta += lr * beta_grad
+    
     return theta, beta
 
 
