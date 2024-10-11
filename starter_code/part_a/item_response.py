@@ -115,8 +115,13 @@ def irt(data, val_data, lr, iterations):
     :return: (theta, beta, val_acc_lst)
     """
     # TODO: Initialize theta and beta.
-    theta = None
-    beta = None
+      # Get the number of unique users and questions
+    num_users = len(set(data['user_id']))  # Total number of students
+    num_questions = len(set(data['question_id']))  # Total number of questions
+
+    # Initialize theta and beta with random small values
+    theta = np.random.normal(0, 0.1, num_users)  # Abilities of students
+    beta = np.random.normal(0, 0.1, num_questions)  # Difficulties of questions
 
     val_acc_lst = []
 
@@ -151,31 +156,42 @@ def evaluate(data, theta, beta):
 
 
 def main():
+    # Load the training, validation, and test datasets
     train_data = load_train_csv(r"starter_code\data")
-    # You may optionally use the sparse matrix.
     sparse_matrix = load_train_sparse(r"starter_code\data").toarray()
     val_data = load_valid_csv(r"starter_code\data")
     test_data = load_public_test_csv(r"starter_code\data")
-    
 
-    #####################################################################
-    # TODO:                                                             #
-    # Tune learning rate and number of iterations. With the implemented #
-    # code, report the validation and test accuracy.                    #
-    #####################################################################
-    pass
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
+    # Initialize theta and beta
+    num_users = sparse_matrix.shape[0]  # Number of students
+    num_questions = sparse_matrix.shape[1]  # Number of questions
 
-    #####################################################################
-    # TODO:                                                             #
-    # Implement part (d)                                                #
-    #####################################################################
-    pass
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
+    # Initialize theta and beta (random values or zeros)
+    theta = np.random.normal(0, 0.1, num_users)  # Abilities of students
+    beta = np.random.normal(0, 0.1, num_questions)  # Difficulties of questions
+
+    # Set the learning rate and number of iterations
+    lr = 0.01  # Adjust the learning rate if necessary
+    iterations = 1000  # Number of iterations
+
+    # Train the model using the IRT function
+    print("Training the IRT model...")
+    theta, beta, val_acc_lst = irt(train_data, val_data, lr, iterations)
+
+    # After training, evaluate the model on the validation and test sets
+    val_acc = evaluate(val_data, theta, beta)
+    test_acc = evaluate(test_data, theta, beta)
+
+    print(f"Validation Accuracy: {val_acc:.4f}")
+    print(f"Test Accuracy: {test_acc:.4f}")
+
+    # Plot the validation accuracy over iterations if you want to visualize it
+    import matplotlib.pyplot as plt
+    plt.plot(val_acc_lst)
+    plt.xlabel("Iteration")
+    plt.ylabel("Validation Accuracy")
+    plt.title("Validation Accuracy over Iterations")
+    plt.show()
 
 
 if __name__ == "__main__":
