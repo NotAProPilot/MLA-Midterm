@@ -1,13 +1,15 @@
+import random
 import sys
 import numpy as np
 import os
+import matplotlib.pyplot as plt
 
 # Add the parent directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import *
 
 def sigmoid(x):
-    """ Apply sigmoid function.
+    """ Apply sigmoid function in part 4.2. 
     
     Computes the probability of a correct response for a student i to a question j.
     
@@ -19,7 +21,7 @@ def sigmoid(x):
 
 
 def neg_log_likelihood(data, theta, beta):
-    """ Compute the negative log-likelihood.
+    """ Compute the negative log-likelihood. 
 
     :param data: A dictionary {user_id: list, question_id: list, is_correct: list}
     :param theta: Vector of student abilities
@@ -43,8 +45,8 @@ def neg_log_likelihood(data, theta, beta):
 
     # Return negative log-likelihood
     return -log_likelihood
-    
-    
+
+
 def update_theta_beta(data, lr, theta, beta):
     """ Update theta and beta using gradient descent.
 
@@ -63,18 +65,8 @@ def update_theta_beta(data, lr, theta, beta):
     :param beta: Vector
     :return: tuple of vectors
     """
-    #####################################################################
-    # TODO:                                                             #
-    # Implement the function as described in the docstring.             #
-    #####################################################################
-    # pass
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
-    
     
     # Initialize the gradients for theta and beta
-    # In the form of an array
     theta_grad = np.zeros_like(theta) 
     beta_grad = np.zeros_like(beta)
     
@@ -114,8 +106,7 @@ def irt(data, val_data, lr, iterations):
     :param iterations: int
     :return: (theta, beta, val_acc_lst)
     """
-    # TODO: Initialize theta and beta.
-      # Get the number of unique users and questions
+    # Get the number of unique users and questions
     num_users = len(set(data['user_id']))  # Total number of students
     num_questions = len(set(data['question_id']))  # Total number of questions
 
@@ -132,7 +123,6 @@ def irt(data, val_data, lr, iterations):
         print("NLLK: {} \t Score: {}".format(neg_lld, score))
         theta, beta = update_theta_beta(data, lr, theta, beta)
 
-    # TODO: You may change the return values to achieve what you want.
     return theta, beta, val_acc_lst
 
 
@@ -155,6 +145,28 @@ def evaluate(data, theta, beta):
            / len(data["is_correct"])
 
 
+def plot_probability_vs_theta(theta_range, beta, question_indices):
+    """
+    Plot the probability of correct responses for different questions as a 
+    function of student ability (theta).
+
+    :param theta_range: Array of student abilities
+    :param beta: Array of question difficulties
+    :param question_indices: List of question indices to plot
+    """
+    plt.figure()
+
+    for question_id in question_indices:
+        probabilities = sigmoid(theta_range - beta[question_id])
+        plt.plot(theta_range, probabilities, label=f"Question {question_id + 1}")
+
+    plt.xlabel("Student Ability (θ)")
+    plt.ylabel("Probability of Correct Response")
+    plt.title("Probability of Correct Response vs. Student Ability")
+    plt.legend()
+    plt.show()
+
+
 def main():
     # Load the training, validation, and test datasets
     train_data = load_train_csv(r"starter_code\data")
@@ -172,7 +184,7 @@ def main():
 
     # Set the learning rate and number of iterations
     lr = 0.01  # Adjust the learning rate if necessary
-    iterations = 1000  # Number of iterations
+    iterations = 100  # Number of iterations
 
     # Train the model using the IRT function
     print("Training the IRT model...")
@@ -186,12 +198,16 @@ def main():
     print(f"Test Accuracy: {test_acc:.4f}")
 
     # Plot the validation accuracy over iterations if you want to visualize it
-    import matplotlib.pyplot as plt
     plt.plot(val_acc_lst)
     plt.xlabel("Iteration")
     plt.ylabel("Validation Accuracy")
     plt.title("Validation Accuracy over Iterations")
     plt.show()
+
+    # Step 4: Choose three distinct questions and plot their probability of a correct response
+    theta_range = np.linspace(-3, 3, 100)  # Range of student abilities
+    question_indices = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]  # Choose three distinct questions (e.g., Question 1, 2, and 3)
+    plot_probability_vs_theta(theta_range, beta, question_indices)
 
 
 if __name__ == "__main__":
