@@ -168,47 +168,64 @@ def plot_probability_vs_theta(theta_range, beta, question_indices):
 
 
 def main():
+    """
+    Main function to train the IRT model, evaluate it, and plot results.
+
+    This function performs the following tasks:
+    1. Loads the training, validation, and test datasets.
+    2. Initializes the learning rates and iterates over them to train the IRT model with each rate.
+    3. For each learning rate, it computes the validation accuracy over iterations.
+    4. Plots the validation accuracy for different learning rates on the same graph for comparison.
+    5. Evaluates the final model on the test set and prints the accuracy.
+    6. Chooses three distinct questions and plots their probability of a correct response
+       as a function of student ability (theta).
+    """
     # Load the training, validation, and test datasets
     train_data = load_train_csv(r"starter_code\data")
     sparse_matrix = load_train_sparse(r"starter_code\data").toarray()
     val_data = load_valid_csv(r"starter_code\data")
     test_data = load_public_test_csv(r"starter_code\data")
 
-    # Initialize theta and beta
-    num_users = sparse_matrix.shape[0]  # Number of students
-    num_questions = sparse_matrix.shape[1]  # Number of questions
-
-    # Initialize theta and beta (random values or zeros)
-    theta = np.random.normal(0, 0.1, num_users)  # Abilities of students
-    beta = np.random.normal(0, 0.1, num_questions)  # Difficulties of questions
-
-    # Set the learning rate and number of iterations
-    lr = 0.01  # Adjust the learning rate if necessary
+    # Initialize parameters
+    learning_rates = [0.005, 0.01, 0.02]  # List of learning rates to test
     iterations = 100  # Number of iterations
+    val_acc_lists = {}  # Dictionary to store validation accuracy lists for each learning rate
 
-    # Train the model using the IRT function
-    print("Training the IRT model...")
-    theta, beta, val_acc_lst = irt(train_data, val_data, lr, iterations)
+    # Loop through each learning rate
+    for lr in learning_rates:
+        print(f"Training the IRT model with learning rate {lr}...")
 
-    # After training, evaluate the model on the validation and test sets
-    val_acc = evaluate(val_data, theta, beta)
-    test_acc = evaluate(test_data, theta, beta)
+        # Train the model using the IRT function
+        theta, beta, val_acc_lst = irt(train_data, val_data, lr, iterations)
 
-    print(f"Validation Accuracy: {val_acc:.4f}")
-    print(f"Test Accuracy: {test_acc:.4f}")
+        # Store the validation accuracy list for this learning rate
+        val_acc_lists[lr] = val_acc_lst
 
-    # Plot the validation accuracy over iterations if you want to visualize it
-    plt.plot(val_acc_lst)
+        # After training, evaluate the model on the validation and test sets
+        val_acc = evaluate(val_data, theta, beta)
+        test_acc = evaluate(test_data, theta, beta)
+
+        print(f"Validation Accuracy for lr={lr}: {val_acc:.4f}")
+        print(f"Test Accuracy for lr={lr}: {test_acc:.4f}")
+
+    # Plot the validation accuracy over iterations for all learning rates
+    plt.figure()
+    for lr, val_acc_lst in val_acc_lists.items():
+        plt.plot(val_acc_lst, label=f"lr={lr}")
+
     plt.xlabel("Iteration")
     plt.ylabel("Validation Accuracy")
-    plt.title("Validation Accuracy over Iterations")
+    plt.title("Validation Accuracy over Iterations for Different Learning Rates")
+    plt.legend()
     plt.show()
 
     # Step 4: Choose three distinct questions and plot their probability of a correct response
     theta_range = np.linspace(-3, 3, 100)  # Range of student abilities
-    question_indices = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]  # Choose three distinct questions (e.g., Question 1, 2, and 3)
+    question_indices = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]  # Choose three distinct questions
     plot_probability_vs_theta(theta_range, beta, question_indices)
 
 
 if __name__ == "__main__":
     main()
+
+
