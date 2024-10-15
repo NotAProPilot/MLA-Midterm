@@ -1,4 +1,5 @@
-from utils import *
+import sys
+import os
 from torch.autograd import Variable
 
 import torch.nn as nn
@@ -8,6 +9,10 @@ import torch.utils.data
 
 import numpy as np
 import torch
+
+# Add the parent directory to the system path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils import *
 
 
 def load_data(base_path="../data"):
@@ -23,9 +28,9 @@ def load_data(base_path="../data"):
         test_data: A dictionary {user_id: list,
         user_id: list, is_correct: list}
     """
-    train_matrix = load_train_sparse(base_path).toarray()
-    valid_data = load_valid_csv(base_path)
-    test_data = load_public_test_csv(base_path)
+    train_matrix = load_train_sparse(r"starter_code\data").toarray()
+    valid_data = load_valid_csv(r"starter_code\data")
+    test_data = load_public_test_csv(r"starter_code\data")
 
     zero_train_matrix = train_matrix.copy()
     # Fill in the missing entries to 0.
@@ -36,7 +41,7 @@ def load_data(base_path="../data"):
 
     return zero_train_matrix, train_matrix, valid_data, test_data
 
-
+# Step 1: Implement the AutoEncoder class.
 class AutoEncoder(nn.Module):
     def __init__(self, num_question, k=100):
         """ Initialize a class AutoEncoder.
@@ -71,11 +76,13 @@ class AutoEncoder(nn.Module):
         # Use sigmoid activations for f and g.                              #
         #####################################################################
         out = inputs
+        hidden = torch.sigmoid(self.g(inputs))  # Hidden layer with sigmoid activation
+        out = torch.sigmoid(self.h(hidden))     # Output layer with sigmoid activation
+        return out
         #####################################################################
         #                       END OF YOUR CODE                            #
         #####################################################################
-        return out
-
+# Step 2: Implement the train function. 
 
 def train(model, lr, lamb, train_data, zero_train_data, valid_data, num_epoch):
     """ Train the neural network, where the objective also includes
@@ -100,8 +107,7 @@ def train(model, lr, lamb, train_data, zero_train_data, valid_data, num_epoch):
     num_student = train_data.shape[0]
 
     for epoch in range(0, num_epoch):
-        train_loss = 0.
-
+        train_loss = 0
         for user_id in range(num_student):
             inputs = Variable(zero_train_data[user_id]).unsqueeze(0)
             target = inputs.clone()
@@ -111,9 +117,13 @@ def train(model, lr, lamb, train_data, zero_train_data, valid_data, num_epoch):
 
             # Mask the target to only compute the gradient of valid entries.
             nan_mask = np.isnan(train_data[user_id].unsqueeze(0).numpy())
-            target[0][nan_mask] = output[0][nan_mask]
+            target[0][nan_mask] = output[0][nan_mask]  # TODO: THIS LINE IS ERROR PRONE
 
             loss = torch.sum((output - target) ** 2.)
+            loss.backward()
+            
+            # Compute the loss (squared error) + L2 regularization
+            loss = torch.sum((output - target) ** 2.) + (lamb / 2) * model.get_weight_norm()
             loss.backward()
 
             train_loss += loss.item()
@@ -156,25 +166,43 @@ def evaluate(model, train_data, valid_data):
 def main():
     zero_train_matrix, train_matrix, valid_data, test_data = load_data()
 
-    #####################################################################
-    # TODO:                                                             #
-    # Try out 5 different k and select the best k using the             #
-    # validation set.                                                   #
-    #####################################################################
-    # Set model hyperparameters.
-    k = None
-    model = None
-
     # Set optimization hyperparameters.
-    lr = None
-    num_epoch = None
-    lamb = None
+    lr = 0.01
+    num_epoch = 30
+    lamb = 0.01
 
-    train(model, lr, lamb, train_matrix, zero_train_matrix,
-          valid_data, num_epoch)
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
+    best_k = 0
+    best_acc = 0
+
+    # Test different values of latent dimension k
+    k_values = [10, 50, 100, 200, 500]
+    for k in k_values:
+        print(f"Training with k={k}")
+        
+        # Initialize the AutoEncoder model with latent dimension k
+        model = AutoEncoder(num_question=train_matrix.shape[1], k=k)
+
+        # Train the model
+        train(model, lr, lamb, train_matrix, zero_train_matrix, valid_data, num_epoch)
+        
+        # Evaluate validation accuracy
+        valid_acc = evaluate(model, zero_train_matrix, valid_data)
+
+        print(f"k={k}, Validation Accuracy: {valid_acc}")
+
+        # Track the best model based on validation accuracy
+        if valid_acc > best_acc:
+            best_acc = valid_acc
+            best_k = k
+    
+    lamb_values = [0.001, 0.01, 0.1, 1]
+    for lamb in lamb_values:
+        print(f"Training with lambda={lamb}")
+        # Train the model as before, and track the results.
+
+
+    print(f"Best k: {best_k} with Validation Accuracy: {best_acc}")
+
 
 
 if __name__ == "__main__":

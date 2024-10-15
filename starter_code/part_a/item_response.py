@@ -113,6 +113,10 @@ def irt(data, val_data, lr, iterations):
     # Initialize theta and beta with random small values
     theta = np.random.normal(0, 0.1, num_users)  # Abilities of students
     beta = np.random.normal(0, 0.1, num_questions)  # Difficulties of questions
+    
+    # Print num_user and num_questions for testing
+    print(f"Number of users: {num_users}")
+    print(f"Number of questions: {num_questions}")  
 
     val_acc_lst = []
 
@@ -120,7 +124,10 @@ def irt(data, val_data, lr, iterations):
         neg_lld = neg_log_likelihood(data, theta=theta, beta=beta)
         score = evaluate(data=val_data, theta=theta, beta=beta)
         val_acc_lst.append(score)
-        print("NLLK: {} \t Score: {}".format(neg_lld, score))
+        
+        # Print negative log likelihood for each iteration
+        print(f"Iteration {i+1}/{iterations} - NLLK: {neg_lld} \t Score: {score}")
+
         theta, beta = update_theta_beta(data, lr, theta, beta)
 
     return theta, beta, val_acc_lst
@@ -180,6 +187,7 @@ def main():
     6. Chooses three distinct questions and plots their probability of a correct response
        as a function of student ability (theta).
     """
+    
     # Load the training, validation, and test datasets
     train_data = load_train_csv(r"starter_code\data")
     sparse_matrix = load_train_sparse(r"starter_code\data").toarray()
