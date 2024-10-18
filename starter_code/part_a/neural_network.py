@@ -1,6 +1,7 @@
 import sys
 import os
 from torch.autograd import Variable
+import matplotlib.pyplot as plt
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -144,22 +145,23 @@ def evaluate(model, train_data, valid_data):
 
 
 
+
 def main():
     zero_train_matrix, train_matrix, valid_data, test_data = load_data()
 
     # Set optimization hyperparameters.
     lr = 0.01
     num_epoch = 30
-    lamb = 0.01
+    lamb = 0.01  # Default lambda for testing k
 
     best_k = 0
     best_acc = 0
     best_lambda = 0
 
     # Arrays to store accuracies for plotting
-    val_accs = []
-    test_accs = []
-    k_values = [10, 50, 100, 200, 500]
+    val_accs_all_k = []
+    test_accs_all_k = []
+    k_values = [10, 20, 30] #TODO: Add more K values here
     
     # Test different values of latent dimension k
     for k in k_values:
@@ -171,12 +173,12 @@ def main():
         # Train the model
         train(model, lr, lamb, train_matrix, zero_train_matrix, valid_data, num_epoch)
         
-        # Evaluate validation accuracy
+        # Evaluate validation and test accuracies
         valid_acc = evaluate(model, zero_train_matrix, valid_data)
         test_acc = evaluate(model, zero_train_matrix, test_data)
 
-        val_accs.append(valid_acc)
-        test_accs.append(test_acc)
+        val_accs_all_k.append(valid_acc)
+        test_accs_all_k.append(test_acc)
 
         print(f"k={k}, Validation Accuracy: {valid_acc}, Test Accuracy: {test_acc}")
 
@@ -185,21 +187,22 @@ def main():
             best_acc = valid_acc
             best_k = k
 
-    # Plot the validation and test accuracies
+    # Plot the validation and test accuracies for all k
     plt.figure(figsize=(10, 5))
-    plt.plot(k_values, val_accs, label='Validation Accuracy', marker='o')
-    plt.plot(k_values, test_accs, label='Test Accuracy', marker='x')
+    plt.plot(k_values, val_accs_all_k, label='Validation Accuracy', marker='o', color='blue')
+    plt.plot(k_values, test_accs_all_k, label='Test Accuracy', marker='x', color='red')
     plt.xlabel('Latent Dimension k')
     plt.ylabel('Accuracy')
     plt.title('Validation and Test Accuracy vs Latent Dimension k')
     plt.legend()
+    plt.grid(True)
     plt.show()
 
-    # Now test different lambdas
-    lamb_values = [0.001, 0.01, 0.1, 1]
+    # Now test different lambda values using the best k found
+    lamb_values = [0.001, 0.01] #TODO: Add more lambda values here
     best_acc_lamb = 0
-    val_accs_lamb = []
-    test_accs_lamb = []
+    val_accs_all_lambda = []
+    test_accs_all_lambda = []
 
     for lamb in lamb_values:
         print(f"Training with lambda={lamb}")
@@ -209,8 +212,8 @@ def main():
         valid_acc = evaluate(model, zero_train_matrix, valid_data)
         test_acc = evaluate(model, zero_train_matrix, test_data)
 
-        val_accs_lamb.append(valid_acc)
-        test_accs_lamb.append(test_acc)
+        val_accs_all_lambda.append(valid_acc)
+        test_accs_all_lambda.append(test_acc)
 
         print(f"lambda={lamb}, Validation Accuracy: {valid_acc}, Test Accuracy: {test_acc}")
 
@@ -218,18 +221,21 @@ def main():
             best_acc_lamb = valid_acc
             best_lambda = lamb
 
-    # Plot the accuracies for different lambdas
+    # Plot the validation and test accuracies for all lambda values
     plt.figure(figsize=(10, 5))
-    plt.plot(lamb_values, val_accs_lamb, label='Validation Accuracy', marker='o')
-    plt.plot(lamb_values, test_accs_lamb, label='Test Accuracy', marker='x')
+    plt.plot(lamb_values, val_accs_all_lambda, label='Validation Accuracy', marker='o', color='blue')
+    plt.plot(lamb_values, test_accs_all_lambda, label='Test Accuracy', marker='x', color='red')
     plt.xlabel('Regularization Lambda')
     plt.ylabel('Accuracy')
-    plt.title('Validation and Test Accuracy vs Regularization Lambda')
+    plt.title(f'Validation and Test Accuracy vs Regularization Lambda (k={best_k})')
     plt.legend()
+    plt.grid(True)
     plt.show()
 
+    # Print final results
     print(f"Best k: {best_k} with Validation Accuracy: {best_acc}")
     print(f"Best lambda: {best_lambda} with Validation Accuracy: {best_acc_lamb}")
+
 
 if __name__ == "__main__":
     main()
