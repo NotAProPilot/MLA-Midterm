@@ -196,7 +196,7 @@ def main():
 
     # Initialize parameters
     learning_rates = [0.005, 0.01, 0.02]  # List of learning rates to test
-    iterations = 100  # Number of iterations
+    iterations = 50  # Number of iterations
     val_acc_lists = {}  # Dictionary to store validation accuracy lists for each learning rate
 
     # Loop through each learning rate
@@ -229,7 +229,7 @@ def main():
 
     # Step 4: Choose three distinct questions and plot their probability of a correct response
     theta_range = np.linspace(-3, 3, 100)  # Range of student abilities
-    question_indices = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]  # Choose three distinct questions
+    question_indices = [1, 2, 3]  # Choose three distinct questions
     plot_probability_vs_theta(theta_range, beta, question_indices)
 
 

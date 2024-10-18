@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import *
 
 
-def load_data(base_path="../data"):
+def load_data(base_path=r"starter_code\data"):
     """ Load the data in PyTorch Tensor.
 
     :return: (zero_train_matrix, train_data, valid_data, test_data)
@@ -82,59 +82,39 @@ class AutoEncoder(nn.Module):
         #####################################################################
         #                       END OF YOUR CODE                            #
         #####################################################################
+
 # Step 2: Implement the train function. 
 
 def train(model, lr, lamb, train_data, zero_train_data, valid_data, num_epoch):
-    """ Train the neural network, where the objective also includes
-    a regularizer.
-
-    :param model: Module
-    :param lr: float
-    :param lamb: float
-    :param train_data: 2D FloatTensor
-    :param zero_train_data: 2D FloatTensor
-    :param valid_data: Dict
-    :param num_epoch: int
-    :return: None
-    """
-    # TODO: Add a regularizer to the cost function. 
-    
-    # Tell PyTorch you are training the model.
+    """ Train the autoencoder with regularization. """
     model.train()
-
-    # Define optimizers and loss function.
-    optimizer = optim.SGD(model.parameters(), lr=lr)
+    optimizer = optim.Adam(model.parameters(), lr=lr)
     num_student = train_data.shape[0]
 
-    for epoch in range(0, num_epoch):
-        train_loss = 0
-        for user_id in range(num_student):
-            inputs = Variable(zero_train_data[user_id]).unsqueeze(0)
-            target = inputs.clone()
+    for epoch in range(num_epoch):
+        train_loss = 0.0
 
-            optimizer.zero_grad()
+        for user_id in range(num_student):
+            # Get input data for this user
+            inputs = Variable(zero_train_data[user_id]).unsqueeze(0)
+            target = train_data[user_id].unsqueeze(0).clone()  # Clone target here
+
+            optimizer.zero_grad()  # Reset gradients before backpropagation
             output = model(inputs)
 
-            # Mask the target to only compute the gradient of valid entries.
-            nan_mask = np.isnan(train_data[user_id].unsqueeze(0).numpy())
-            target[0][nan_mask] = output[0][nan_mask]  # TODO: THIS LINE IS ERROR PRONE
+            # Mask missing entries in the target (NaN values)
+            nan_mask = torch.isnan(train_data[user_id].unsqueeze(0))
+            target[nan_mask] = output[nan_mask]  # Fill NaNs with the model's output
 
-            loss = torch.sum((output - target) ** 2.)
-            loss.backward()
-            
-            # Compute the loss (squared error) + L2 regularization
+            # Compute loss with regularization (L2 norm)
             loss = torch.sum((output - target) ** 2.) + (lamb / 2) * model.get_weight_norm()
-            loss.backward()
+            loss.backward()  # Backpropagation
+            optimizer.step()  # Update weights
 
             train_loss += loss.item()
-            optimizer.step()
 
         valid_acc = evaluate(model, zero_train_data, valid_data)
-        print("Epoch: {} \tTraining Cost: {:.6f}\t "
-              "Valid Acc: {}".format(epoch, train_loss, valid_acc))
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
+        print(f"Epoch: {epoch+1} \tTraining Loss: {train_loss:.6f}\t Valid Accuracy: {valid_acc:.4f}")
 
 
 def evaluate(model, train_data, valid_data):
@@ -163,6 +143,7 @@ def evaluate(model, train_data, valid_data):
     return correct / float(total)
 
 
+
 def main():
     zero_train_matrix, train_matrix, valid_data, test_data = load_data()
 
@@ -173,9 +154,14 @@ def main():
 
     best_k = 0
     best_acc = 0
+    best_lambda = 0
 
-    # Test different values of latent dimension k
+    # Arrays to store accuracies for plotting
+    val_accs = []
+    test_accs = []
     k_values = [10, 50, 100, 200, 500]
+    
+    # Test different values of latent dimension k
     for k in k_values:
         print(f"Training with k={k}")
         
@@ -187,23 +173,63 @@ def main():
         
         # Evaluate validation accuracy
         valid_acc = evaluate(model, zero_train_matrix, valid_data)
+        test_acc = evaluate(model, zero_train_matrix, test_data)
 
-        print(f"k={k}, Validation Accuracy: {valid_acc}")
+        val_accs.append(valid_acc)
+        test_accs.append(test_acc)
+
+        print(f"k={k}, Validation Accuracy: {valid_acc}, Test Accuracy: {test_acc}")
 
         # Track the best model based on validation accuracy
         if valid_acc > best_acc:
             best_acc = valid_acc
             best_k = k
-    
+
+    # Plot the validation and test accuracies
+    plt.figure(figsize=(10, 5))
+    plt.plot(k_values, val_accs, label='Validation Accuracy', marker='o')
+    plt.plot(k_values, test_accs, label='Test Accuracy', marker='x')
+    plt.xlabel('Latent Dimension k')
+    plt.ylabel('Accuracy')
+    plt.title('Validation and Test Accuracy vs Latent Dimension k')
+    plt.legend()
+    plt.show()
+
+    # Now test different lambdas
     lamb_values = [0.001, 0.01, 0.1, 1]
+    best_acc_lamb = 0
+    val_accs_lamb = []
+    test_accs_lamb = []
+
     for lamb in lamb_values:
         print(f"Training with lambda={lamb}")
-        # Train the model as before, and track the results.
+        model = AutoEncoder(num_question=train_matrix.shape[1], k=best_k)  # Use best_k found
 
+        train(model, lr, lamb, train_matrix, zero_train_matrix, valid_data, num_epoch)
+        valid_acc = evaluate(model, zero_train_matrix, valid_data)
+        test_acc = evaluate(model, zero_train_matrix, test_data)
+
+        val_accs_lamb.append(valid_acc)
+        test_accs_lamb.append(test_acc)
+
+        print(f"lambda={lamb}, Validation Accuracy: {valid_acc}, Test Accuracy: {test_acc}")
+
+        if valid_acc > best_acc_lamb:
+            best_acc_lamb = valid_acc
+            best_lambda = lamb
+
+    # Plot the accuracies for different lambdas
+    plt.figure(figsize=(10, 5))
+    plt.plot(lamb_values, val_accs_lamb, label='Validation Accuracy', marker='o')
+    plt.plot(lamb_values, test_accs_lamb, label='Test Accuracy', marker='x')
+    plt.xlabel('Regularization Lambda')
+    plt.ylabel('Accuracy')
+    plt.title('Validation and Test Accuracy vs Regularization Lambda')
+    plt.legend()
+    plt.show()
 
     print(f"Best k: {best_k} with Validation Accuracy: {best_acc}")
-
-
+    print(f"Best lambda: {best_lambda} with Validation Accuracy: {best_acc_lamb}")
 
 if __name__ == "__main__":
     main()
