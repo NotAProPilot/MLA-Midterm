@@ -167,8 +167,8 @@ def sparse_matrix_evaluate(data, matrix, threshold=0.5):
         cur_user_id = data["user_id"][i]
         cur_question_id = data["question_id"][i]
         
-        # Skip if the question_id is out of bounds
-        if cur_question_id >= matrix.shape[1]:
+        # Skip if the question_id is out of bounds  
+        if cur_question_id >= matrix.shape[1]:  #TODO: THIS LINE IS MODIFIED
             continue
         
         if matrix[cur_user_id, cur_question_id] >= threshold and data["is_correct"][i]:

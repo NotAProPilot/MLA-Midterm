@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from typing import Dict, List, Tuple
 import sys
 import os
+from tqdm import tqdm
 
 # Add the parent directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -58,33 +59,6 @@ def knn_impute_by_item(matrix: np.ndarray, data: Dict, k: int) -> np.ndarray:
     imputed_matrix = nbrs.fit_transform(matrix.T).T
     return np.array([imputed_matrix[u, q] for u, q in zip(data["user_id"], data["question_id"])])
 
-def weighted_knn_impute(matrix: np.ndarray, data: Dict, k: int, alpha: float) -> Tuple[float, float, float, float]:
-    """
-    Performs weighted KNN imputation combining user-based and item-based approaches.
-
-    Args:
-        matrix: np.ndarray, the sparse matrix of user-question responses
-        data: Dict, containing user_id, question_id, and is_correct
-        k: int, number of neighbors
-        alpha: float, weighting factor for user-based vs item-based predictions
-
-    Returns:
-        Tuple of (accuracy, precision, recall, f1)
-    """
-    user_pred = knn_impute_by_user(matrix, data, k)
-    item_pred = knn_impute_by_item(matrix, data, k)
-    
-    weighted_pred = alpha * user_pred + (1 - alpha) * item_pred
-    y_pred = (weighted_pred >= 0.5).astype(int)
-    y_true = data["is_correct"]
-    
-    accuracy = accuracy_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred, average='binary')
-    recall = recall_score(y_true, y_pred, average='binary')
-    f1 = f1_score(y_true, y_pred, average='binary')
-    
-    return accuracy, precision, recall, f1
-
 def find_optimal_alpha(matrix: np.ndarray, data: Dict, k: int, alpha_range: np.ndarray) -> float:
     """
     Finds the optimal alpha value using cross-validation.
@@ -102,7 +76,7 @@ def find_optimal_alpha(matrix: np.ndarray, data: Dict, k: int, alpha_range: np.n
     best_alpha = 0
     best_score = 0
     
-    for alpha in alpha_range:
+    for alpha in tqdm(alpha_range, desc=f"Finding optimal alpha for k={k}", leave=False):
         cv_scores = []
         for train_index, val_index in kf.split(data["user_id"]):
             train_data = {key: np.array(data[key])[train_index] for key in data}
@@ -118,9 +92,40 @@ def find_optimal_alpha(matrix: np.ndarray, data: Dict, k: int, alpha_range: np.n
     
     return best_alpha
 
-def evaluate_knn(matrix: np.ndarray, data: Dict, k_values: List[int], alpha_range: np.ndarray) -> List[Tuple[int, float, float, float, float, float]]:
+def weighted_knn_impute(matrix: np.ndarray, data: Dict, k: int, alpha: float) -> Tuple[float, float, float, float]:
     """
-    Evaluates the weighted KNN model for different k values.
+    Performs weighted KNN imputation combining user-based and item-based approaches.
+
+    Args:
+        matrix: np.ndarray, the sparse matrix of user-question responses
+        data: Dict, containing user_id, question_id, and is_correct
+        k: int, number of neighbors
+        alpha: float, weighting factor for user-based vs item-based predictions
+
+    Returns:
+        Tuple of (accuracy, precision, recall, f1)
+    """
+    print(f"Starting KNN imputation for k={k}, alpha={alpha}")
+    user_pred = knn_impute_by_user(matrix, data, k)
+    print("User-based imputation completed")
+    item_pred = knn_impute_by_item(matrix, data, k)
+    print("Item-based imputation completed")
+    
+    weighted_pred = alpha * user_pred + (1 - alpha) * item_pred
+    y_pred = (weighted_pred >= 0.5).astype(int)
+    y_true = data["is_correct"]
+    
+    accuracy = accuracy_score(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, average='binary')
+    recall = recall_score(y_true, y_pred, average='binary')
+    f1 = f1_score(y_true, y_pred, average='binary')
+    
+    print(f"Imputation completed. Accuracy: {accuracy:.4f}")
+    return accuracy, precision, recall, f1
+
+def evaluate_knn(matrix: np.ndarray, data: Dict, k_values: List[int], alpha_range: np.ndarray) -> Dict[int, List[Tuple[float, float, float, float, float]]]:
+    """
+    Evaluates the weighted KNN model for different k and alpha values, storing accuracy, precision, recall, and f1.
 
     Args:
         matrix: np.ndarray, the sparse matrix of user-question responses
@@ -129,78 +134,95 @@ def evaluate_knn(matrix: np.ndarray, data: Dict, k_values: List[int], alpha_rang
         alpha_range: np.ndarray, range of alpha values to test
 
     Returns:
-        List of tuples (k, best_alpha, accuracy, precision, recall, f1)
+        Dictionary where keys are k values and values are lists of tuples 
+        (alpha, accuracy, precision, recall, f1).
     """
-    results = []
-    for k in k_values:
-        print(f"Testing k = {k} for Weighted KNN...")
-        best_alpha = find_optimal_alpha(matrix, data, k, alpha_range)
-        accuracy, precision, recall, f1 = weighted_knn_impute(matrix, data, k, best_alpha)
-        results.append((k, best_alpha, accuracy, precision, recall, f1))
+    results = {}
+    for k in tqdm(k_values, desc="Evaluating k values"):
+        results[k] = []
+        for alpha in tqdm(alpha_range, desc=f"Evaluating alpha for k={k}", leave=False):
+            accuracy, precision, recall, f1 = weighted_knn_impute(matrix, data, k, alpha)
+            results[k].append((alpha, accuracy, precision, recall, f1))
     return results
 
-def plot_results(results: List[Tuple[int, float, float, float, float, float]]):
+
+def plot_results(results: Dict[int, List[Tuple[float, float, float, float, float]]], alpha_range: np.ndarray, k_values: List[int]):
     """
-    Plots the results of the KNN evaluation.
+    Plots how accuracy, precision, recall, and f1 change for different alpha and k values.
 
     Args:
-        results: List of tuples (k, best_alpha, accuracy, precision, recall, f1)
+        results: Dict[int, List[Tuple[float, float, float, float, float]]], results from the KNN evaluation
+        alpha_range: np.ndarray, range of alpha values tested
+        k_values: List[int], list of k values tested
     """
-    k_values, alphas, accuracies, precisions, recalls, f1s = zip(*results)
-    
     plt.figure(figsize=(15, 10))
     
+    # Accuracy vs alpha for different k
     plt.subplot(2, 2, 1)
-    plt.plot(k_values, accuracies, marker='o')
-    plt.title("Accuracy vs k")
-    plt.xlabel("k (Number of Neighbors)")
+    for k in k_values:
+        alphas, accuracies, _, _, _ = zip(*results[k])
+        plt.plot(alphas, accuracies, marker='o', label=f'k={k}')
+    plt.title("Accuracy vs Alpha")
+    plt.xlabel("Alpha")
     plt.ylabel("Accuracy")
-    
+    plt.legend()
+    plt.grid(True)
+
+    # Precision vs alpha for different k
     plt.subplot(2, 2, 2)
-    plt.plot(k_values, precisions, marker='o')
-    plt.title("Precision vs k")
-    plt.xlabel("k (Number of Neighbors)")
+    for k in k_values:
+        alphas, _, precisions, _, _ = zip(*results[k])
+        plt.plot(alphas, precisions, marker='o', label=f'k={k}')
+    plt.title("Precision vs Alpha")
+    plt.xlabel("Alpha")
     plt.ylabel("Precision")
-    
+    plt.legend()
+    plt.grid(True)
+
+    # Recall vs alpha for different k
     plt.subplot(2, 2, 3)
-    plt.plot(k_values, recalls, marker='o')
-    plt.title("Recall vs k")
-    plt.xlabel("k (Number of Neighbors)")
+    for k in k_values:
+        alphas, _, _, recalls, _ = zip(*results[k])
+        plt.plot(alphas, recalls, marker='o', label=f'k={k}')
+    plt.title("Recall vs Alpha")
+    plt.xlabel("Alpha")
     plt.ylabel("Recall")
-    
+    plt.legend()
+    plt.grid(True)
+
+    # F1-Score vs alpha for different k
     plt.subplot(2, 2, 4)
-    plt.plot(k_values, f1s, marker='o')
-    plt.title("F1-Score vs k")
-    plt.xlabel("k (Number of Neighbors)")
+    for k in k_values:
+        alphas, _, _, _, f1_scores = zip(*results[k])
+        plt.plot(alphas, f1_scores, marker='o', label=f'k={k}')
+    plt.title("F1-Score vs Alpha")
+    plt.xlabel("Alpha")
     plt.ylabel("F1-Score")
-    
+    plt.legend()
+    plt.grid(True)
+
     plt.tight_layout()
     plt.show()
-    
-    plt.figure(figsize=(10, 6))
-    plt.plot(k_values, alphas, marker='o')
-    plt.title("Optimal Alpha vs k")
-    plt.xlabel("k (Number of Neighbors)")
-    plt.ylabel("Optimal Alpha")
-    plt.show()
+
 
 def main():
     """
-    Main function to run the enhanced KNN algorithm.
+    Main function to run the enhanced KNN algorithm and plot accuracy, precision, recall, and f1 changes.
     """
     sparse_matrix, val_data, test_data = load_data()
     
-    # Initialize values of k
-    k_values = [1, 6, 11, 16, 21, 26]
-    alpha_range = np.arange(0, 1.1, 0.1)
+    # Initialize values of k and alpha range
+    k_values = [1, 5, 10, 15, 20, 25, 30]
+    alpha_range = np.arange(0, 1.01, 0.25)
     
+    print("Starting KNN evaluation...")
     results = evaluate_knn(sparse_matrix, val_data, k_values, alpha_range)
     
-    print("\nResults (k, best_alpha, accuracy, precision, recall, f1):")
-    for result in results:
-        print(result)
+    print("\nResults for different k and alpha values:")
+    for k in results:
+        print(f"k={k}: {results[k]}")
     
-    plot_results(results)
+    plot_results(results, alpha_range, k_values)
 
 if __name__ == "__main__":
     main()

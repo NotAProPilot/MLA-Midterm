@@ -1,0 +1,1544 @@
+Evaluating k values:   0%|                                                                                                                                                      | 0/6 [00:00<?, ?it/s] 
+Evaluating k=1
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.0                                                                                                                                      | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6065
+Starting KNN imputation for k=1, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6062
+Starting KNN imputation for k=1, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6027
+Starting KNN imputation for k=1, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.5977
+Starting KNN imputation for k=1, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6224
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.1██████▉                                                                                                                       | 1/11 [01:12<12:00, 72.02s/it]
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6065
+Starting KNN imputation for k=1, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6062
+Starting KNN imputation for k=1, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6027
+Starting KNN imputation for k=1, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.5977
+Starting KNN imputation for k=1, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6224
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.2██████████████████▊                                                                                                           | 2/11 [02:19<10:24, 69.42s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6065
+Starting KNN imputation for k=1, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6062
+Starting KNN imputation for k=1, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6027
+Starting KNN imputation for k=1, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.5977
+Starting KNN imputation for k=1, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6224
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.30000000000000004██████████████▋                                                                                               | 3/11 [03:25<09:02, 67.78s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6065
+Starting KNN imputation for k=1, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6062
+Starting KNN imputation for k=1, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6027
+Starting KNN imputation for k=1, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.5977
+Starting KNN imputation for k=1, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6224
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.4██████████████████████████████████████████▋                                                                                   | 4/11 [04:35<08:01, 68.75s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6065
+Starting KNN imputation for k=1, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6062
+Starting KNN imputation for k=1, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6027
+Starting KNN imputation for k=1, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.5977
+Starting KNN imputation for k=1, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6224
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.5██████████████████████████████████████████████████████▌                                                                       | 5/11 [05:51<07:08, 71.46s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6432
+Starting KNN imputation for k=1, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6217
+Starting KNN imputation for k=1, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6288
+Starting KNN imputation for k=1, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6394
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.6000000000000001███████████████████████████████████████████████████▍                                                           | 6/11 [07:01<05:53, 70.78s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6192
+Starting KNN imputation for k=1, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6189
+Starting KNN imputation for k=1, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6239
+Starting KNN imputation for k=1, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6295
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.7000000000000001███████████████████████████████████████████████████████████████▎                                               | 7/11 [08:12<04:43, 70.88s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6192
+Starting KNN imputation for k=1, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6189
+Starting KNN imputation for k=1, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6239
+Starting KNN imputation for k=1, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6295
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.8██████████████████████████████████████████████████████████████████████████████████████████▎                                   | 8/11 [09:27<03:36, 72.30s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6192
+Starting KNN imputation for k=1, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6189
+Starting KNN imputation for k=1, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6239
+Starting KNN imputation for k=1, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6295
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=0.9██████████████████████████████████████████████████████████████████████████████████████████████████████▏                       | 9/11 [10:32<02:19, 69.99s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6192
+Starting KNN imputation for k=1, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6189
+Starting KNN imputation for k=1, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6239
+Starting KNN imputation for k=1, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6295
+                                                                                                                                                                                                      Starting KNN imputation for k=1, alpha=1.0█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏           | 10/11 [12:01<01:15, 75.83s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6192
+Starting KNN imputation for k=1, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6189
+Starting KNN imputation for k=1, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6239
+Starting KNN imputation for k=1, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6309
+Starting KNN imputation for k=1, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6295
+                                                                                                                                                                                                      Best alpha for k=1: 0.50
+Starting KNN imputation for k=1, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6328
+Completed evaluation for k=1
+Evaluating k values:  17%|███████████████████████▏                                                                                                                   | 1/6 [14:07<1:10:36, 847.36s/it] 
+Evaluating k=6
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.0                                                                                                                                      | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6544
+Starting KNN imputation for k=6, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6521
+Starting KNN imputation for k=6, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6373
+Starting KNN imputation for k=6, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6584
+Starting KNN imputation for k=6, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6690
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.1██████▉                                                                                                                       | 1/11 [01:29<14:51, 89.20s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6714
+Starting KNN imputation for k=6, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6725
+Starting KNN imputation for k=6, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6648
+Starting KNN imputation for k=6, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6747
+Starting KNN imputation for k=6, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.2██████████████████▊                                                                                                           | 2/11 [02:59<13:28, 89.83s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6714
+Starting KNN imputation for k=6, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6725
+Starting KNN imputation for k=6, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6648
+Starting KNN imputation for k=6, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6747
+Starting KNN imputation for k=6, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.30000000000000004██████████████▋                                                                                               | 3/11 [04:31<12:05, 90.64s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6756
+Starting KNN imputation for k=6, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6789
+Starting KNN imputation for k=6, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6655
+Starting KNN imputation for k=6, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=6, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6972
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.4██████████████████████████████████████████▋                                                                                   | 4/11 [06:01<10:32, 90.36s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6819
+Starting KNN imputation for k=6, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=6, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6754
+Starting KNN imputation for k=6, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=6, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7036
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.5██████████████████████████████████████████████████████▌                                                                       | 5/11 [07:27<08:53, 88.96s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6855
+Starting KNN imputation for k=6, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6831
+Starting KNN imputation for k=6, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6782
+Starting KNN imputation for k=6, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=6, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.6000000000000001███████████████████████████████████████████████████▍                                                           | 6/11 [08:39<06:56, 83.36s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6911
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7008
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7001
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.7000000000000001███████████████████████████████████████████████████████████████▎                                               | 7/11 [09:59<05:28, 82.00s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6883
+Starting KNN imputation for k=6, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=6, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=6, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7008
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.8██████████████████████████████████████████████████████████████████████████████████████████▎                                   | 8/11 [11:15<04:00, 80.10s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6862
+Starting KNN imputation for k=6, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=6, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=0.9██████████████████████████████████████████████████████████████████████████████████████████████████████▏                       | 9/11 [12:33<02:39, 79.64s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6862
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=1.0█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏           | 10/11 [13:43<01:16, 76.49s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6791
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6754
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6718
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+                                                                                                                                                                                                      Best alpha for k=6: 0.60
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6950
+Completed evaluation for k=6
+Evaluating k values:  33%|███████████████████████████████████████████████                                                                                              | 2/6 [29:27<59:21, 890.34s/it]
+Evaluating k=11
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.0                                                                                                                                     | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6869
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6853
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6747
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6817
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.1██████▋                                                                                                                     | 1/11 [01:50<18:26, 110.68s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6925
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6761
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6817
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.2██████████████████▍                                                                                                         | 2/11 [03:31<15:44, 104.95s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7017
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6782
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6895
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.30000000000000004██████████████▏                                                                                             | 3/11 [05:13<13:48, 103.60s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7087
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6944
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7092
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.4█████████████████████████████████████████▉                                                                                  | 4/11 [06:54<11:57, 102.57s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7144
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7008
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7128
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.5█████████████████████████████████████████████████████▋                                                                      | 5/11 [08:30<10:00, 100.11s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7123
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7029
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6824
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6902
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7121
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.6000000000000001██████████████████████████████████████████████████▉                                                           | 6/11 [09:40<07:30, 90.03s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7179
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=6, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+                                                                                                                                                                                                      Starting KNN imputation for k=6, alpha=1.0█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏           | 10/11 [13:43<01:16, 76.49s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6791
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6754
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6718
+Starting KNN imputation for k=6, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+                                                                                                                                                                                                      Best alpha for k=6: 0.60
+Starting KNN imputation for k=6, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6950
+Completed evaluation for k=6
+Evaluating k values:  33%|███████████████████████████████████████████████                                                                                              | 2/6 [29:27<59:21, 890.34s/it]
+Evaluating k=11
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.0                                                                                                                                     | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6869
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6853
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6747
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6817
+Starting KNN imputation for k=11, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.1██████▋                                                                                                                     | 1/11 [01:50<18:26, 110.68s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6925
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6761
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6817
+Starting KNN imputation for k=11, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.2██████████████████▍                                                                                                         | 2/11 [03:31<15:44, 104.95s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7017
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6782
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6895
+Starting KNN imputation for k=11, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.30000000000000004██████████████▏                                                                                             | 3/11 [05:13<13:48, 103.60s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7087
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6944
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+Starting KNN imputation for k=11, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7092
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.4█████████████████████████████████████████▉                                                                                  | 4/11 [06:54<11:57, 102.57s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7144
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7008
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=11, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7128
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.5█████████████████████████████████████████████████████▋                                                                      | 5/11 [08:30<10:00, 100.11s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7123
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7029
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6824
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6902
+Starting KNN imputation for k=11, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7121
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.6000000000000001██████████████████████████████████████████████████▉                                                           | 6/11 [09:40<07:30, 90.03s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7179
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7064
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6958
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7036
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.7000000000000001██████████████████████████████████████████████████████████████▋                                               | 7/11 [10:59<05:45, 86.43s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7102
+Starting KNN imputation for k=11, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7036
+Starting KNN imputation for k=11, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=11, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6944
+Starting KNN imputation for k=11, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7036
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.8█████████████████████████████████████████████████████████████████████████████████████████▌                                   | 8/11 [12:11<04:05, 81.86s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7038
+Starting KNN imputation for k=11, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6965
+Starting KNN imputation for k=11, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+Starting KNN imputation for k=11, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=11, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6994
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=0.9█████████████████████████████████████████████████████████████████████████████████████████████████████▎                       | 9/11 [13:27<02:39, 79.76s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6961
+Starting KNN imputation for k=11, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=11, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=11, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6831
+Starting KNN imputation for k=11, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+                                                                                                                                                                                                      Starting KNN imputation for k=11, alpha=1.0████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎           | 10/11 [14:51<01:21, 81.20s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6961
+Starting KNN imputation for k=11, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+Starting KNN imputation for k=11, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6838
+Starting KNN imputation for k=11, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6824
+Starting KNN imputation for k=11, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+                                                                                                                                                                                                      Best alpha for k=11: 0.60
+Starting KNN imputation for k=11, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+Completed evaluation for k=11
+Evaluating k values:  50%|██████████████████████████████████████████████████████████████████████▌                                                                      | 3/6 [45:55<46:44, 934.67s/it] 
+Evaluating k=16
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.0                                                                                                                                     | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6953
+Starting KNN imputation for k=16, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+Starting KNN imputation for k=16, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6782
+Starting KNN imputation for k=16, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6796
+Starting KNN imputation for k=16, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6831
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.1██████▊                                                                                                                      | 1/11 [01:22<13:41, 82.13s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7003
+Starting KNN imputation for k=16, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6965
+Starting KNN imputation for k=16, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+Starting KNN imputation for k=16, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=16, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.2██████████████████▋                                                                                                          | 2/11 [02:55<13:16, 88.46s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7045
+Starting KNN imputation for k=16, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6994
+Starting KNN imputation for k=16, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=16, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=16, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.30000000000000004██████████████▍                                                                                              | 3/11 [04:09<10:56, 82.03s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7123
+Starting KNN imputation for k=16, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6972
+Starting KNN imputation for k=16, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=16, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+Starting KNN imputation for k=16, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7078
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.4██████████████████████████████████████████▎                                                                                  | 4/11 [05:32<09:36, 82.40s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7158
+Starting KNN imputation for k=16, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+Starting KNN imputation for k=16, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6895
+Starting KNN imputation for k=16, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6895
+Starting KNN imputation for k=16, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7057
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.5██████████████████████████████████████████████████████                                                                       | 5/11 [06:49<08:03, 80.65s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7137
+Starting KNN imputation for k=16, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=16, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6831
+Starting KNN imputation for k=16, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=16, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7029
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.6000000000000001██████████████████████████████████████████████████▉                                                           | 6/11 [08:05<06:35, 79.04s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7165
+Starting KNN imputation for k=16, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=16, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=16, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6965
+Starting KNN imputation for k=16, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6958
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.7000000000000001██████████████████████████████████████████████████████████████▋                                               | 7/11 [09:22<05:12, 78.13s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7073
+Starting KNN imputation for k=16, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=16, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+Starting KNN imputation for k=16, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=16, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.8█████████████████████████████████████████████████████████████████████████████████████████▌                                   | 8/11 [10:38<03:52, 77.62s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7031
+Starting KNN imputation for k=16, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6895
+Starting KNN imputation for k=16, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6817
+Starting KNN imputation for k=16, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6725
+Starting KNN imputation for k=16, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=0.9█████████████████████████████████████████████████████████████████████████████████████████████████████▎                       | 9/11 [11:55<02:34, 77.37s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6989
+Starting KNN imputation for k=16, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=16, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6789
+Starting KNN imputation for k=16, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6725
+Starting KNN imputation for k=16, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+                                                                                                                                                                                                      Starting KNN imputation for k=16, alpha=1.0████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎           | 10/11 [13:11<01:16, 76.96s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6848
+Starting KNN imputation for k=16, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=16, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6655
+Starting KNN imputation for k=16, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6662
+Starting KNN imputation for k=16, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+                                                                                                                                                                                                      Best alpha for k=16: 0.30
+Starting KNN imputation for k=16, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7000
+Completed evaluation for k=16
+Evaluating k values:  67%|████████████████████████████████████████████████████████████████████████████████████████████▋                                              | 4/6 [1:00:37<30:28, 914.14s/it] 
+Evaluating k=21
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.0                                                                                                                                     | 0/11 [00:00<?, ?it/s] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6989
+Starting KNN imputation for k=21, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7001
+Starting KNN imputation for k=21, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=21, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6810
+Starting KNN imputation for k=21, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6902
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.1██████▊                                                                                                                      | 1/11 [01:18<13:08, 78.83s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7052
+Starting KNN imputation for k=21, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7043
+Starting KNN imputation for k=21, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=21, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6860
+Starting KNN imputation for k=21, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6994
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.2██████████████████▋                                                                                                          | 2/11 [02:35<11:39, 77.69s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7102
+Starting KNN imputation for k=21, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7071
+Starting KNN imputation for k=21, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6944
+Starting KNN imputation for k=21, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=21, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7043
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.30000000000000004██████████████▍                                                                                              | 3/11 [03:54<10:24, 78.04s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7109
+Starting KNN imputation for k=21, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7064
+Starting KNN imputation for k=21, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6902
+Starting KNN imputation for k=21, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6923
+Starting KNN imputation for k=21, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7121
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.4██████████████████████████████████████████▎                                                                                  | 4/11 [05:12<09:06, 78.05s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7080
+Starting KNN imputation for k=21, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7008
+Starting KNN imputation for k=21, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=21, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+Starting KNN imputation for k=21, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7050
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.5██████████████████████████████████████████████████████                                                                       | 5/11 [06:30<07:47, 77.99s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7038
+Starting KNN imputation for k=21, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+Starting KNN imputation for k=21, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6789
+Starting KNN imputation for k=21, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+Starting KNN imputation for k=21, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7015
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.6000000000000001██████████████████████████████████████████████████▉                                                           | 6/11 [07:58<06:48, 81.62s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7052
+Starting KNN imputation for k=21, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6937
+Starting KNN imputation for k=21, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6810
+Starting KNN imputation for k=21, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6860
+Starting KNN imputation for k=21, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6951
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.7000000000000001██████████████████████████████████████████████████████████████▋                                               | 7/11 [09:20<05:26, 81.68s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6968
+Starting KNN imputation for k=21, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=21, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6810
+Starting KNN imputation for k=21, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6824
+Starting KNN imputation for k=21, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.8█████████████████████████████████████████████████████████████████████████████████████████▌                                   | 8/11 [10:45<04:08, 82.72s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6932
+Starting KNN imputation for k=21, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6853
+Starting KNN imputation for k=21, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6718
+Starting KNN imputation for k=21, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6761
+Starting KNN imputation for k=21, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6838
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=0.9█████████████████████████████████████████████████████████████████████████████████████████████████████▎                       | 9/11 [12:07<02:45, 82.61s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6784
+Starting KNN imputation for k=21, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6803
+Starting KNN imputation for k=21, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6655
+Starting KNN imputation for k=21, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6648
+Starting KNN imputation for k=21, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6860
+                                                                                                                                                                                                      Starting KNN imputation for k=21, alpha=1.0████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎           | 10/11 [13:44<01:26, 86.80s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6756
+Starting KNN imputation for k=21, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6725
+Starting KNN imputation for k=21, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6570
+Starting KNN imputation for k=21, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6613
+Starting KNN imputation for k=21, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6796
+                                                                                                                                                                                                      Best alpha for k=21: 0.30
+Starting KNN imputation for k=21, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7024
+Completed evaluation for k=21
+Evaluating k values:  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                       | 5/6 [1:16:02<15:18, 918.02s/it] 
+Evaluating k=26
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.0                                                                                                                                     | 0/11 [00:00<?, ?it/s]
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6897
+Starting KNN imputation for k=26, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6930
+Starting KNN imputation for k=26, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6853
+Starting KNN imputation for k=26, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6860
+Starting KNN imputation for k=26, alpha=0.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.1██████▊                                                                                                                      | 1/11 [01:27<14:37, 87.70s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6946
+Starting KNN imputation for k=26, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6994
+Starting KNN imputation for k=26, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6881
+Starting KNN imputation for k=26, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=26, alpha=0.1
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.2██████████████████▋                                                                                                          | 2/11 [02:53<13:00, 86.78s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7010
+Starting KNN imputation for k=26, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7015
+Starting KNN imputation for k=26, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=26, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6916
+Starting KNN imputation for k=26, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7071
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.30000000000000004██████████████▍                                                                                              | 3/11 [04:18<11:27, 85.96s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7024
+Starting KNN imputation for k=26, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7022
+Starting KNN imputation for k=26, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6909
+Starting KNN imputation for k=26, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=26, alpha=0.30000000000000004
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7050
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.4██████████████████████████████████████████▎                                                                                  | 4/11 [05:41<09:52, 84.60s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6953
+Starting KNN imputation for k=26, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+Starting KNN imputation for k=26, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6853
+Starting KNN imputation for k=26, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6888
+Starting KNN imputation for k=26, alpha=0.4
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7064
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.5██████████████████████████████████████████████████████                                                                       | 5/11 [07:03<08:23, 83.85s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6968
+Starting KNN imputation for k=26, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6902
+Starting KNN imputation for k=26, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6845
+Starting KNN imputation for k=26, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=26, alpha=0.5
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7015
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.6000000000000001██████████████████████████████████████████████████▉                                                           | 6/11 [08:25<06:56, 83.20s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.7003
+Starting KNN imputation for k=26, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6867
+Starting KNN imputation for k=26, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6754
+Starting KNN imputation for k=26, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+Starting KNN imputation for k=26, alpha=0.6000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6944
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.7000000000000001██████████████████████████████████████████████████████████████▋                                               | 7/11 [09:50<05:35, 83.85s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6918
+Starting KNN imputation for k=26, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6874
+Starting KNN imputation for k=26, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6697
+Starting KNN imputation for k=26, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6733
+Starting KNN imputation for k=26, alpha=0.7000000000000001
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.8█████████████████████████████████████████████████████████████████████████████████████████▌                                   | 8/11 [11:13<04:10, 83.55s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6862
+Starting KNN imputation for k=26, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6782
+Starting KNN imputation for k=26, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6655
+Starting KNN imputation for k=26, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6676
+Starting KNN imputation for k=26, alpha=0.8
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6860
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=0.9█████████████████████████████████████████████████████████████████████████████████████████████████████▎                       | 9/11 [12:39<02:48, 84.29s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6714
+Starting KNN imputation for k=26, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6733
+Starting KNN imputation for k=26, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6486
+Starting KNN imputation for k=26, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6542
+Starting KNN imputation for k=26, alpha=0.9
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6768
+                                                                                                                                                                                                      Starting KNN imputation for k=26, alpha=1.0████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎           | 10/11 [14:07<01:25, 85.31s/it] 
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6544
+Starting KNN imputation for k=26, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6606
+Starting KNN imputation for k=26, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6373
+Starting KNN imputation for k=26, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6450
+Starting KNN imputation for k=26, alpha=1.0
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6641
+                                                                                                                                                                                                      Best alpha for k=26: 0.20
+Starting KNN imputation for k=26, alpha=0.2
+User-based imputation completed
+Item-based imputation completed
+Imputation completed. Accuracy: 0.6980
+Completed evaluation for k=26
+Evaluating k values: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6/6 [1:31:51<00:00, 918.58s/it] 
+
+Results (k, best_alpha, accuracy, precision, recall, f1):
+(1, 0.5, 0.6327970646344906, 0.6407552304813744, 0.8848954662908152, 0.7432912391475928)
+(6, 0.6000000000000001, 0.6950324583686142, 0.7053291536050157, 0.8456659619450317, 0.7691485952355518)
+(11, 0.6000000000000001, 0.7022297488004516, 0.712784935579782, 0.8447263330984262, 0.7731670608471296)
+(16, 0.30000000000000004, 0.6999717753316399, 0.7156446063549888, 0.8306319003993422, 0.7688627962600565)
+(21, 0.30000000000000004, 0.7023708721422524, 0.7165322580645161, 0.8348602302090674, 0.7711836823261364)
+(26, 0.2, 0.6979960485464296, 0.7152735407768965, 0.8261686633779657, 0.7667320688903423)
+PS D:\FIT\Senior Year\FALL 2024\MLA\MLA Midterm>
