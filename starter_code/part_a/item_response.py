@@ -118,6 +118,7 @@ def irt(data, val_data, lr, iterations):
     print(f"Number of users: {num_users}")
     print(f"Number of questions: {num_questions}")  
 
+    # Storing the validation accuracy for each iteration
     val_acc_lst = []
 
     for i in range(iterations):

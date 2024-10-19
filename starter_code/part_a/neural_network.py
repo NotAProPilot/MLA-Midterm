@@ -151,7 +151,7 @@ def main():
 
     # Set optimization hyperparameters.
     lr = 0.01
-    num_epoch = 30
+    num_epoch = 20
     lamb = 0.01  # Default lambda for testing k
 
     best_k = 0
@@ -161,7 +161,7 @@ def main():
     # Arrays to store accuracies for plotting
     val_accs_all_k = []
     test_accs_all_k = []
-    k_values = [10, 20, 30] #TODO: Add more K values here
+    k_values = [10, 25, 50, 75, 100]
     
     # Test different values of latent dimension k
     for k in k_values:
@@ -187,7 +187,7 @@ def main():
             best_acc = valid_acc
             best_k = k
 
-    # Plot the validation and test accuracies for all k
+    # Plot the validation and test accuracies for all k on the same plot
     plt.figure(figsize=(10, 5))
     plt.plot(k_values, val_accs_all_k, label='Validation Accuracy', marker='o', color='blue')
     plt.plot(k_values, test_accs_all_k, label='Test Accuracy', marker='x', color='red')
@@ -199,7 +199,7 @@ def main():
     plt.show()
 
     # Now test different lambda values using the best k found
-    lamb_values = [0.001, 0.01] #TODO: Add more lambda values here
+    lamb_values = [0.001, 0.005, 0.01, 0,25, 0.5]
     best_acc_lamb = 0
     val_accs_all_lambda = []
     test_accs_all_lambda = []
@@ -221,7 +221,7 @@ def main():
             best_acc_lamb = valid_acc
             best_lambda = lamb
 
-    # Plot the validation and test accuracies for all lambda values
+    # Plot the validation and test accuracies for all lambda values on the same plot
     plt.figure(figsize=(10, 5))
     plt.plot(lamb_values, val_accs_all_lambda, label='Validation Accuracy', marker='o', color='blue')
     plt.plot(lamb_values, test_accs_all_lambda, label='Test Accuracy', marker='x', color='red')

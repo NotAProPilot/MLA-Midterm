@@ -1,0 +1,81 @@
+PS D:\FIT\Senior Year\FALL 2024\MLA\MLA Midterm> & C:/Python311/python.exe "d:/FIT/Senior Year/FALL 2024/MLA/MLA Midterm/starter_code/part_a/knn.py"
+Testing k = 1 for KNN by user and item...
+KNN by User: Accuracy = 0.6245, Precision = 0.6746, Recall = 0.7242, F1 = 0.6985
+KNN by Item: Accuracy = 0.6071, Precision = 0.6682, Recall = 0.6873, F1 = 0.6776
+------------------------------------------------------------
+Testing k = 5 for KNN by user and item...
+KNN by User: Accuracy = 0.6799, Precision = 0.7009, Recall = 0.8149, F1 = 0.7536
+KNN by Item: Accuracy = 0.6568, Precision = 0.6934, Recall = 0.7684, F1 = 0.7290
+------------------------------------------------------------
+Testing k = 10 for KNN by user and item...
+KNN by User: Accuracy = 0.6839, Precision = 0.6840, Recall = 0.8807, F1 = 0.7700
+KNN by Item: Accuracy = 0.6719, Precision = 0.6886, Recall = 0.8285, F1 = 0.7521
+------------------------------------------------------------
+Testing k = 15 for KNN by user and item...
+KNN by User: Accuracy = 0.6849, Precision = 0.6971, Recall = 0.8407, F1 = 0.7622
+KNN by Item: Accuracy = 0.6863, Precision = 0.7159, Recall = 0.7921, F1 = 0.7521
+------------------------------------------------------------
+Testing k = 20 for KNN by user and item...
+KNN by User: Accuracy = 0.6679, Precision = 0.6750, Recall = 0.8626, F1 = 0.7573
+KNN by Item: Accuracy = 0.6876, Precision = 0.7067, Recall = 0.8205, F1 = 0.7593
+------------------------------------------------------------
+Testing k = 25 for KNN by user and item...
+KNN by User: Accuracy = 0.6554, Precision = 0.6755, Recall = 0.8205, F1 = 0.7410
+KNN by Item: Accuracy = 0.6932, Precision = 0.7187, Recall = 0.8041, F1 = 0.7590
+------------------------------------------------------------
+Testing k = 30 for KNN by user and item...
+KNN by User: Accuracy = 0.6380, Precision = 0.6589, Recall = 0.8241, F1 = 0.7323
+KNN by Item: Accuracy = 0.6943, Precision = 0.7148, Recall = 0.8172, F1 = 0.7626
+------------------------------------------------------------
+Testing k = 35 for KNN by user and item...
+KNN by User: Accuracy = 0.6276, Precision = 0.6552, Recall = 0.8022, F1 = 0.7213
+KNN by Item: Accuracy = 0.6928, Precision = 0.7196, Recall = 0.8006, F1 = 0.7579
+------------------------------------------------------------
+Testing k = 40 for KNN by user and item...
+KNN by User: Accuracy = 0.6243, Precision = 0.6519, Recall = 0.8041, F1 = 0.7200
+KNN by Item: Accuracy = 0.6940, Precision = 0.7163, Recall = 0.8125, F1 = 0.7614
+------------------------------------------------------------
+Testing k = 45 for KNN by user and item...
+KNN by User: Accuracy = 0.6233, Precision = 0.6519, Recall = 0.8003, F1 = 0.7185
+KNN by Item: Accuracy = 0.6922, Precision = 0.7186, Recall = 0.8015, F1 = 0.7578
+------------------------------------------------------------
+Testing k = 50 for KNN by user and item...
+KNN by User: Accuracy = 0.6238, Precision = 0.6522, Recall = 0.8006, F1 = 0.7188
+KNN by Item: Accuracy = 0.6932, Precision = 0.7160, Recall = 0.8109, F1 = 0.7605
+------------------------------------------------------------
+Testing k = 55 for KNN by user and item...
+KNN by User: Accuracy = 0.6240, Precision = 0.6527, Recall = 0.7999, F1 = 0.7188
+KNN by Item: Accuracy = 0.6933, Precision = 0.7190, Recall = 0.8036, F1 = 0.7590
+------------------------------------------------------------
+Testing k = 60 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6929, Precision = 0.7156, Recall = 0.8114, F1 = 0.7605
+------------------------------------------------------------
+Testing k = 65 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6932, Precision = 0.7183, Recall = 0.8050, F1 = 0.7592
+------------------------------------------------------------
+Testing k = 70 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6938, Precision = 0.7171, Recall = 0.8097, F1 = 0.7606
+------------------------------------------------------------
+Testing k = 75 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6926, Precision = 0.7179, Recall = 0.8046, F1 = 0.7588
+------------------------------------------------------------
+Testing k = 80 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6924, Precision = 0.7158, Recall = 0.8093, F1 = 0.7596
+------------------------------------------------------------
+Testing k = 85 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6939, Precision = 0.7191, Recall = 0.8048, F1 = 0.7596
+------------------------------------------------------------
+Testing k = 90 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6911, Precision = 0.7147, Recall = 0.8086, F1 = 0.7587
+------------------------------------------------------------
+Testing k = 95 for KNN by user and item...
+KNN by User: Accuracy = 0.6239, Precision = 0.6525, Recall = 0.8001, F1 = 0.7188
+KNN by Item: Accuracy = 0.6925, Precision = 0.7169, Recall = 0.8067, F1 = 0.7591
+------------------------------------------------------------
